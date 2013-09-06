@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Instacap</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <%= image_tag('logo.png') %>
+
+    </div> <!-- End Logo -->
+
+    <div id="login-box">
+      <form>
+        <input type="text" name="username" value="" />
+        <input type="password" name="password" value="" />
+        <input type="submit" name="submit" value="Sign In" />
+      </form>
+    </div>
+  </div><!-- End header -->
+
+  <div id="content">
+    <%= yield %>
+  </div><!-- end content -->
+
+  <div id="footer">
+    <h6 align="center"> (C) Harsh Alkutkar 2013 </h6>
+
+    <h6 align="center"> All Rights Reserved. </h6>
+  </div><!-- end footer -->
+</div><!-- End wrapper -->
+
+
+</body>
+</html>

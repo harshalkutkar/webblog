@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  uid: 1
+  name: MyString
+  caption: MyString
+  tags: MyString
+  bidder_id: 
+  bid: 1.5
+
+two:
+  id: 1
+  uid: 1
+  name: MyString
+  caption: MyString
+  tags: MyString
+  bidder_id: 
+  bid: 1.5
