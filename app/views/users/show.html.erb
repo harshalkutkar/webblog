@@ -1,3 +1,18 @@
+<script tpye="text/javascript">
+    $(document).ready(function() {
+        $('body').css('background-image', 'url(../images/upload_images/<%= @user.background_pic %>)');
+        $('body').css('background-size', 'cover');
+        $('body').css('background-repeat', 'no-repeat');
+        $('body').css('color', '#fff');
+
+        $('#wrapper').css('background-color', 'rgba(0, 0, 0, 0.6)');
+
+
+    });
+</script>
+
+<img src='../images/upload_images/<%= @user.profile_pic      %>'/>
+
 <p id="notice"><%= notice %></p>
 
 <p>

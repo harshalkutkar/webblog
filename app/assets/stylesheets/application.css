@@ -16,16 +16,20 @@
 
 body{
 
-    background:url('grad.png') repeat-x;
+
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 *{
     margin:0;
     padding:0;
 }
+#main{
+    background:url('grad.png') repeat-x;
+}
 #wrapper{
     width:950px;
     margin:0 auto;
+
 }
 #header{
     width:100%;
@@ -58,11 +62,14 @@ body{
     height:50px;
     margin-top:10px;
 }
-
-input
-{
+input{
     -moz-border-radius: 15px;
     border-radius: 15px;
+}
+#content input
+{
+
     border:solid 1px black;
     padding:5px;
+    width: 300px;
 }

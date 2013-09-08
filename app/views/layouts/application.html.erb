@@ -9,10 +9,11 @@
 
 </head>
 <body>
+<div id="main">
 <div id="wrapper">
   <div id="header">
     <div id="logo">
-      <%= image_tag('logo.png') %>
+      <%= link_to  image_tag('logo.png'),:controller => 'index', :action => :welcome %>
 
     </div> <!-- End Logo -->
 
@@ -36,6 +37,6 @@
   </div><!-- end footer -->
 </div><!-- End wrapper -->
 
-
+</div>
 </body>
 </html>
