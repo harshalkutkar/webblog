@@ -12,3 +12,14 @@
 
 </div>
 
+ <div id="recent" style="height: 400px; width:100%; margin-top: 10px;">
+
+    <h4> Recently Uploaded </h4>
+   <% @photos.each do |p|     %>
+       <div class="recent_pic" style="width:300; height:400; float: left; margin-right:10px;">
+          <img width='300' height="300" src="/images/upload_images/<%= p.name  %>"/>
+
+       </div>
+    <%   end %>
+
+ </div>
