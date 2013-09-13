@@ -1,13 +1,23 @@
 Webblog::Application.routes.draw do
 
-  resources :photos
 
+  resources :photos
+  resources :authentication
   resources :users
+
 
   root :to => "index#welcome"
 
-  get '/:username' => 'users#show'
+  devise_for :users
+  devise_scope :users do
+    get "sign_in", :to => "devise/sessions#new", as: "sign_in_path"
+    get "sign_out", :to => "devise/sessions#destroy"
+    get "sign_up", :to => "users#new"
+  end
 
+
+  get '/:username' => 'users#show'
+  post 'authentication/sign_in'=> 'authentication#login'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

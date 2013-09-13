@@ -1,0 +1,8 @@
+
+<% if   !(flash.now[:error])       %>
+Authenticated user: <%= @authenticated_user %>
+User email <%= @user.email if @user.email  %>
+User pass <%= @user.password if @user.password%>
+<% else %>
+<h3> User not authenticated </h3>
+<% end %>

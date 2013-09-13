@@ -10,8 +10,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-
+         if params[:id]<=> ("sign_in")
+          redirect_to :controller => 'authentication',:action => 'show'
+        end
   end
+
 
   # GET /users/new
   def new
@@ -154,6 +157,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:id, :first_name, :last_name, :username, :password, :address, :city, :state, :country, :profile_pic, :background_pic, :about)
+      params.require(:user).permit(:id, :first_name, :last_name, :username, :password, :address, :city, :state, :country, :profile_pic, :background_pic, :about, :email)
     end
 end
