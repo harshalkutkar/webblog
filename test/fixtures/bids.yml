@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pid: 1
+  uid: 1
+  bid: 1.5
+  time: 2013-09-13 12:36:42
+
+two:
+  pid: 1
+  uid: 1
+  bid: 1.5
+  time: 2013-09-13 12:36:42

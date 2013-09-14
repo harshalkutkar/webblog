@@ -2,7 +2,7 @@ Webblog::Application.routes.draw do
 
 
   resources :photos
-  resources :authentication
+
   resources :users
 
 
@@ -10,14 +10,23 @@ Webblog::Application.routes.draw do
 
   devise_for :users
   devise_scope :users do
-    get "sign_in", :to => "devise/sessions#new", as: "sign_in_path"
+    get "sign_in", :to => "authentication#login", as: "sign_in_path"
+    get "authentication/show"  => 'authentication#show'
+    post "authentication/show"  => 'authentication#login'
+    post "authentication/authenticate"  => 'authentication#authenticate'
+    get "authentication/authenticate"  => 'authentication#authenticate'
+    get "authentication/destroy" => 'authentication#destroy'
+    get '/users/uploads' => 'users#uploads'
     get "sign_out", :to => "devise/sessions#destroy"
     get "sign_up", :to => "users#new"
   end
 
 
+
   get '/:username' => 'users#show'
-  post 'authentication/sign_in'=> 'authentication#login'
+  get 'authentication/show'=> 'authentication#login'
+  post '/authentication/destroy'=> 'authentication#destroy'
+  get '/photos/uploads/:uid'=> 'photos#uploads'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

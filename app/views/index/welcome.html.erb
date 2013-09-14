@@ -1,4 +1,5 @@
 
+
 <div id="placeholder" style="background: #b8b8b8; padding: 10px 5px 5px 5px; height: 280px;">
         <div id="images_place" style="float:left">
              <img src="assets/image1.jpg" style="float: left; margin-right: 25px;"/>   <img src="assets/image2.jpg" style="float: left; border: #333333 2px solid;"/>
@@ -6,9 +7,14 @@
         </div>
 
     <div id="sign_up_place" style="float:right; margin-top: 100px; margin-right: 100px;">
-      <%= link_to 'Sign Up', {:controller => 'users', :action => 'new'},{:style=>'background:#292929; padding: 15px 30px 15px 30px;color:#fff; -moz-border-radius: 15px;
+      <%= link_to 'Sign Up', {:controller => 'users', :action => 'new'},{:style=>'background:#292929; padding: 15px 35px 15px 35px;color:#fff; -moz-border-radius: 15px;
           border-radius: 15px; font-weight:normal; font-size:16px'} %>
     </div>
+  <div id="sign_up_place" style="float:left; margin-left: 160px; margin-top: 50px;">
+
+    <%= link_to 'Log In', {:controller => 'devise/sessions', :action => 'new'},{:style=>'background:#292929; padding: 15px 40px 15px 40px;color:#fff; -moz-border-radius: 15px;
+          border-radius: 15px; font-weight:normal; font-size:16px'} %>
+  </div>
 
 </div>
 

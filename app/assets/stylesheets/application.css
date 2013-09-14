@@ -63,8 +63,7 @@ body{
     margin-top:10px;
 }
 input{
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+
 }
 #content input
 {
@@ -72,4 +71,41 @@ input{
     border:solid 1px black;
     padding:5px;
     width: 300px;
+}
+.button{
+    background:#333333;
+    color: #fff;
+
+
+
+}
+#parent_container{
+    clear: both;
+    width: 100%;
+    min-height:500px;
+}
+#left_nav{
+    margin-top: 20px;
+    width: 30%;
+    min-height: 500px;
+    float: left;
+
+}
+#left_nav a{
+    font-weight: normal;
+    font-size: 15px;
+    text-decoration: none;
+    clear: both;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding:15px 15px 15px;
+    float: left;
+    margin-top: 10px;
+    width: 150px;
+
+}
+#right_panel{
+    float:left;
+    width: 300px;
+    min-height: 300px;
 }

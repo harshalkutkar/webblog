@@ -15,10 +15,9 @@
     <%= f.label :id %><br>
     <%= f.number_field :id %>
   </div>
-  <div class="field">
-    <%= f.label :uid %><br>
-    <%= f.number_field :uid %>
-  </div>
+
+   <%= f.hidden_field :uid, :as => :hidden, :input_html => { :value => @photo.uid }   %>
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.file_field  :picture  %>
@@ -31,14 +30,8 @@
     <%= f.label :tags %><br>
     <%= f.text_field :tags %>
   </div>
-  <div class="field">
-    <%= f.label :bidder_id %><br>
-    <%= f.text_field :bidder_id %>
-  </div>
-  <div class="field">
-    <%= f.label :bid %><br>
-    <%= f.text_field :bid %>
-  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

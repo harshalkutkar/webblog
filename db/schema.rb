@@ -11,16 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130912172324) do
+ActiveRecord::Schema.define(version: 20130914191050) do
+
+  create_table "bids", force: true do |t|
+    t.integer  "pid"
+    t.integer  "uid"
+    t.float    "bid"
+    t.datetime "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "photos", force: true do |t|
-    t.integer  "pid"
     t.integer  "uid"
     t.string   "name"
     t.string   "caption"
     t.string   "tags"
-    t.integer  "bidder_id"
-    t.float    "bid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

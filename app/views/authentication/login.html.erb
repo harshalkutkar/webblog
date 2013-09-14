@@ -1,8 +1,25 @@
+<div id="parent_container">
+  <% if   !(flash.now[:error])       %>
+      Authenticated user: <%= @authenticated_user %>
+      User email <%= @user.email if @user.email  %>
+      User pass <%= @user.password if @user.password%>
+      <div id="left_nav">
 
-<% if   !(flash.now[:error])       %>
-Authenticated user: <%= @authenticated_user %>
-User email <%= @user.email if @user.email  %>
-User pass <%= @user.password if @user.password%>
-<% else %>
-<h3> User not authenticated </h3>
-<% end %>
+        <%= link_to('Preview Profile',{:controller => "users", :action => "show",id:@user.id},{:class => "button"})  %>
+        <%= link_to('Edit User',{:controller => "users", :action => "edit",id:@user.id},{:class => "button"})  %>
+        <a href="#" class="button">View Bids</a>           <br/>
+        <a href="#" class="button">Search</a>               <br/>
+        <%= link_to('Upload Photos',{:controller => "photos", :action => "new"},{:class => "button"})  %>
+        <%= link_to('Logout',{:controller => "authentication", :action => "destroy"},{:class => "button"})  %>
+
+      </div>
+      <div id="right_panel">
+        <script type="text/javascript">getPhotos(<%=@user.id%>)</script>
+      </div>
+     </div>
+  <% else %>
+      <h3> User not authenticated </h3>
+  <% end %>
+
+
+</div>

@@ -7,13 +7,30 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+
+
   # GET /users/1
   # GET /users/1.json
   def show
-         if params[:id]<=> ("sign_in")
-          redirect_to :controller => 'authentication',:action => 'show'
-        end
-  end
+    if (is_signed_in)
+      @preview=true;  #the same user is viewing the profile.
+      puts("------- DEBUG ------------" + session[:user].to_s)
+    else
+      @preview = false;
+    end
+
+    if params[:id]== ("sign_in")
+      redirect_to :controller => 'authentication',:action => 'show'
+    end
+    if params[:id]== ("sign_out")
+       redirect_to :controller => 'authentication',:action => 'destroy'
+           end
+    if params[:id]== ("uploads")
+             redirect_to :controller => 'users',:action => 'uploads'
+
+    end
+
+    end
 
 
   # GET /users/new
@@ -155,8 +172,19 @@ class UsersController < ApplicationController
       end
     end
 
+  def is_signed_in
+      if (session[:user])
+       #session exists
+          return true
+
+
+      end
+  end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:id, :first_name, :last_name, :username, :password, :address, :city, :state, :country, :profile_pic, :background_pic, :about, :email)
     end
+
+
 end

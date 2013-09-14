@@ -10,12 +10,22 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+
+  end
+
+  def uploads
+    @user = params[:uid]
+    @photos = Photo.where(:uid=>@user)
+    respond_to do |wants|
+
+      wants.html { render :layout => false }
+    end
   end
 
   # GET /photos/new
   def new
     @photo = Photo.new
-
+    @photo.uid = session[:user]
   end
 
   # GET /photos/1/edit
@@ -105,6 +115,9 @@ class PhotosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
+      if params[:id]== ("uploads")
+        redirect_to :controller => 'photos',:action => 'uploads'
+      end
       @photo = Photo.find(params[:id])
     end
 

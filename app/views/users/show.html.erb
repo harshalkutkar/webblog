@@ -1,4 +1,10 @@
-<script tpye="text/javascript">
+<% if (@preview) %>
+<div id="preview_control">
+             <h2>This is a preview.</h2>
+</div>
+
+ <% end %>
+<script type="text/javascript">
     $(document).ready(function() {
         $('body').css('background-image', 'url(../images/upload_images/<%= @user.background_pic %>)');
         $('body').css('background-size', 'cover');
